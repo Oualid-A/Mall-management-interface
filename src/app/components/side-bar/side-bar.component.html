@@ -1,0 +1,200 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav class="sidenav  hide-scrollbar  w-90" fixedInViewport="true" mode="side" opened="true">
+        <div class="sidenav-inner-container p-2 ml-4">
+            <h1 class="side-title">aradei</h1>
+            <mat-nav-list class="hide-scrollbar ">
+                <!--  aradei -->
+                <div class="items mb-2 ">
+                    <a routerLink="/" (click)="toggleAradeiChildren()" (click)="setActiveLink('/')"
+                        [class.active]="activeLink === '/'"
+                        class="flex flex-row  items-center justify-between  px-2 py-2 h-11 w-60 	nav-bar-items">
+                        <div class="flex flex-row items-center ">
+                            <mat-icon aria-hidden="false" fontIcon="home"></mat-icon>
+                            <p class="mb-0 text-lg font-medium  ml-3">Aradei</p>
+                        </div>
+                        <div class="mt-2">
+                            <mat-icon aria-hidden="false" aria-label="Example home icon"
+                                fontIcon="{{ showAradeiChildren ? 'remove' : 'add' }}"></mat-icon>
+                        </div>
+                    </a>
+                    <div *ngIf="showAradeiChildren"
+                        class="p-4 ml-3 flex flex-row justify-start flex-nowrap items-center">
+                        <div class="flex flex-col justify-between">
+                            <a routerLink="/" (click)="setActiveLink('/')" [class.active]="activeLink === '/'"
+                                class="nav-bar-items flex items-center  font-medium w-52 mb-2 h-11 p-4 ">Malls</a>
+                            <a routerLink="/aradei/brands" [class.active]="activeLink === '/aradei/brands' "
+                                (click)="setActiveLink('/aradei/brands')"
+                                class="nav-bar-items flex items-center w-52 h-11 p-4 font-medium mb-2">Brands</a>
+                            <a routerLink="/aradei/units" [class.active]="activeLink === '/aradei/units'"
+                                (click)="setActiveLink('/aradei/units')"
+                                class="nav-bar-items flex items-center p-4 font-medium w-52 h-11 mb-2">Units</a>
+                            <a routerLink="/aradei/tenant" [class.active]="activeLink === '/aradei/tenant'"
+                                (click)="setActiveLink('/aradei/tenant')"
+                                class="nav-bar-items flex items-center p-4 font-medium h-11 w-52 -mb-4 ">Tenants</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- the contents -->
+                <div class="items  mb-2">
+                    <a routerLink="/contents/events" (click)="toggleContentChildren()"
+                        (click)=" setActiveLink('/contents/events')" [class.active]="activeLink === '/contents/events' "
+                        class="flex flex-row h-11 w-60  items-center justify-between  p-3 nav-bar-items">
+                        <div class="flex flex-row items-center">
+                            <mat-icon aria-hidden="false" fontIcon="assignment"></mat-icon>
+                            <p class="mb-0 text-lg font-medium  ml-3">Content</p>
+                        </div>
+                        <div class="mt-2">
+                            <mat-icon aria-hidden="false" aria-label="Example home icon"
+                                fontIcon="{{ showContentChildren ? 'remove' : 'add' }}"></mat-icon>
+                        </div>
+                    </a>
+                    <div *ngIf="showContentChildren" class="p-4 flex flex-row justify-start flex-nowrap items-center">
+                        <div class="flex flex-col justify-between ml-3  ">
+
+                            <a routerLink="/contents/events"
+                                class="nav-bar-items p-4 font-medium w-52 h-11  mb-2 flex items-center"
+                                [class.active]="activeLink === '/contents/events' "
+                                (click)="setActiveLink('/contents/events')">Events</a>
+
+                            <a routerLink="/contents/news" [class.active]="activeLink === '/contents/news' "
+                                (click)="setActiveLink('/contents/news')"
+                                class="nav-bar-items p-4 font-medium w-52 h-11  mb-2 flex items-center">News</a>
+
+                            <a routerLink="/contents/surveys" [class.active]="activeLink === '/contents/surveys'"
+                                (click)="setActiveLink('/contents/surveys')"
+                                class="nav-bar-items w-52 h-11  mb-2 flex p-4 font-medium items-center">Surveys</a>
+
+                            <a routerLink="/contents/promos" [class.active]="activeLink === '/contents/promos' "
+                                (click)="setActiveLink('/contents/promos')"
+                                class="nav-bar-items w-52 h-11  -mb-4 flex p-4 font-medium items-center">Promos</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- app user -->
+                <div class="items  mb-2">
+                    <a routerLink="/app-user" (click)=" setActiveLink('/app-user')"
+                        [class.active]="activeLink === '/app-user' "
+                        class="flex flex-row  items-center justify-between  p-3 h-11 w-60  nav-bar-items ">
+                        <div class="flex flex-row items-center tit">
+                            <mat-icon aria-hidden="false" fontIcon="person"></mat-icon>
+                            <p class="mb-0 text-lg font-medium ml-3">App user</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Permission -->
+                <div class="items  mb-2">
+                    <a routerLink="/permission/users" (click)="togglePermissionChildren()"
+                        (click)=" setActiveLink('/permission/users')"
+                        [class.active]="activeLink === '/permission/users' "
+                        class="flex flex-row  items-center justify-between h-11 w-60  p-3 nav-bar-items ">
+                        <div class="flex flex-row items-center tit">
+                            <span class="material-icons">gpp_good</span>
+                            <p class="mb-0 text-lg font-medium ml-3">Permission</p>
+                        </div>
+                        <div class="mt-2">
+                            <mat-icon aria-hidden="false" aria-label="Example home icon"
+                                fontIcon="{{ showPermissionChildren ? 'remove' : 'add' }}"></mat-icon>
+                        </div>
+                    </a>
+                    <div *ngIf="showPermissionChildren"
+                        class="p-4 flex flex-row justify-start flex-nowrap items-center">
+                        <div class="flex flex-col justify-between">
+                            <a routerLink="/permission/users" [class.active]="activeLink === '/permission/users' "
+                                (click)="setActiveLink('/permission/users')"
+                                class="nav-bar-items flex items-center w-52 h-11 p-4 font-medium  mb-2">Users</a>
+                            <a routerLink="/permission/roles" [class.active]="activeLink === '/permission/roles' "
+                                (click)="setActiveLink('/permission/roles')"
+                                class="nav-bar-items flex items-center w-52 h-11 p-4 font-medium  -mb-4">Roles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reciept -->
+                <div class="items  mb-2">
+                    <a routerLink="/reciept/validated" (click)="toggleRecieptChildren()"
+                        (click)=" setActiveLink('/reciept/validated')"
+                        [class.active]="activeLink === '/reciept/validated' "
+                        class="flex flex-row  items-center justify-between h-11 w-60  p-3	nav-bar-items ">
+                        <div class="flex flex-row items-center tit">
+                            <span class="material-icons">receipt</span>
+                            <p class="mb-0 text-lg font-medium ml-3">Reciept</p>
+                        </div>
+                        <div class="mt-2">
+                            <mat-icon aria-hidden="false" aria-label="Example home icon"
+                                fontIcon="{{ showRecieptChildren ? 'remove' : 'add' }}"></mat-icon>
+                        </div>
+                    </a>
+                    <div *ngIf="showRecieptChildren" class="p-4 flex flex-row justify-start flex-nowrap items-center">
+                        <div class="flex flex-col justify-between">
+                            <a routerLink="/reciept/validated" [class.active]="activeLink === '/reciept/validated' "
+                                (click)="setActiveLink('/reciept/validated')"
+                                class="nav-bar-items flex items-center w-52 h-11 p-4 font-medium  mb-2">Validated</a>
+                            <a routerLink="/reciept/pending" [class.active]="activeLink === '/reciept/pending' "
+                                (click)="setActiveLink('/reciept/pending')"
+                                class="nav-bar-items flex items-center w-52 h-11 p-4 font-medium  mb-2">Pending</a>
+                            <a routerLink="/reciept/rejected" [class.active]="activeLink === '/reciept/rejected' "
+                                (click)="setActiveLink('/reciept/rejected')"
+                                class="nav-bar-items flex items-center w-52 h-11 p-4 font-medium  -mb-4">Rejected</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Supports -->
+                <div class="items  mb-2">
+                    <a routerLink="/support" (click)=" setActiveLink('/support')"
+                        [class.active]="activeLink === '/support' "
+                        class="flex flex-row  items-center justify-between  p-3 h-11 w-60  nav-bar-items ">
+                        <div class="flex flex-row items-center tit">
+                            <span class="material-icons">support</span>
+                            <p class="mb-0 text-lg font-medium ml-3">Supports</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- foot fall -->
+                <div class="items  mb-2">
+                    <a routerLink="/foot-fall" (click)=" setActiveLink('/foot-fall')"
+                        [class.active]="activeLink === '/foot-fall' "
+                        class="flex flex-row  items-center justify-between h-11 w-60  p-3	nav-bar-items ">
+                        <div class="flex flex-row items-center tit">
+                            <span class="material-icons">photo_camera</span>
+                            <p class="mb-0 text-lg font-medium ml-3">Foot fall</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- wifi hotspot -->
+                <div class="items  mb-2">
+                    <a routerLink="/Hotspots" (click)=" setActiveLink('/Hotspots')"
+                        [class.active]="activeLink === '/Hotspots' "
+                        class="flex flex-row  items-center justify-between h-11 w-60  p-3	nav-bar-items ">
+                        <div class="flex flex-row items-center tit">
+                            <span class="material-icons">wifi</span>
+                            <p class="mb-0 text-lg font-medium ml-3">Wi-Fi Hotspot</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Media -->
+                <div class="items">
+                    <a routerLink="/media" (click)=" setActiveLink('/media')" [class.active]="activeLink === '/media' "
+                        class="flex flex-row  items-center justify-between h-11 w-60  p-3	nav-bar-items ">
+                        <div class="flex flex-row items-center tit">
+                            <span class="material-icons">tv</span>
+                            <p class="mb-0 text-lg font-medium ml-3">Media</p>
+                        </div>
+                    </a>
+                </div>
+            </mat-nav-list>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+
+        <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+            <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
+            <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+        </button>
+
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,72 @@
+.side-title {
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 32px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  letter-spacing: 2px;
+  margin: 35px 0 35px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.nav-bar-items {
+  background-color: rgba(59, 132, 156, 1);
+}
+
+mat-sidenav-container {
+  height: 100vh;
+}
+
+.avatar {
+  margin-top: 16px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.name {
+  margin-top: 8px;
+  font-weight: normal;
+}
+
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #6c6b6d #ffffff;
+}
+
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #dcdbdc;
+  border-radius: 10px;
+  border: 3px solid #ffffff;
+}
+
+.hide-scrollbar {
+  -webkit-scrollbar {
+    display: none !important;
+  }
+  scrollbar-width: none !important;
+}
+.sidenav-inner-container {
+  overflow: scroll !important;
+  height: 100% !important;
+}
+
+.nav-bar-items {
+  background-color: white !important;
+  color: rgba(154, 168, 184, 1) !important;
+  border: 0px solid rgba(59, 132, 156, 1) !important;
+  border-radius: 10px !important;
+}
+
+.nav-bar-items.active {
+  background-color: rgba(59, 132, 156, 1) !important;
+  color: white !important;
+}

@@ -1,0 +1,48 @@
+table {
+  width: 100%;
+}
+.notifications {
+  color: rgba(59, 132, 156, 1);
+  font-size: 36px;
+  padding-bottom: 33px;
+  padding-right: 35px;
+}
+.search-btn {
+  background-color: rgba(59, 132, 156, 1);
+  padding: 8px;
+  border-radius: 5px;
+  display: flex;
+  align-self: flex-start;
+  margin-top: 10px;
+}
+.edit-btn {
+  background-color: rgba(251, 186, 16, 1);
+  padding: 8px;
+  border-radius: 5px;
+  display: flex;
+  align-self: flex-start;
+  margin-right: 5px;
+}
+.add-mall-btn {
+  background-color: rgba(59, 132, 156, 1);
+  padding: 8px;
+  border-radius: 5px;
+  display: flex;
+  align-self: flex-start;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+}
+.view-icon {
+  color: rgba(59, 132, 156, 1);
+  margin-right: 10px;
+}
+.edit-icon {
+  color: rgba(251, 186, 16, 1);
+  margin-right: 10px;
+}
+.delete-icon {
+  color: rgba(201, 92, 158, 1);
+}
